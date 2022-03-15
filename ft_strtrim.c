@@ -17,7 +17,7 @@ char *ft_strtrim(char const *s1, char const *set)
             last--;
         str = (char *)malloc(sizeof(char) * (last - start + 1));
         if (str)
-            ft_strlcpy(str, s1[start], (last - start + 1));
+            ft_strlcpy(str, (char *)&s1[start], (last - start + 1));
     }
     return (str);
 }

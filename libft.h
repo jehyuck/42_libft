@@ -15,7 +15,7 @@ int ft_isprint(int c);
 int ft_toupper(int c);
 int ft_tolower(int c);
 int ft_strncmp();
-int ft_strlcpy();
+size_t ft_strlcpy(char *dst, const char *src, size_t size);
 int ft_strlcat();
 int ft_strrchr();
 int ft_strnstr();
