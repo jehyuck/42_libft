@@ -13,16 +13,19 @@ SRCS_B = ft_lstnew.c \
 	  		ft_lstclear.c \
 	  		ft_lstiter.c \
 	  		ft_lstmap.c
+OBJS_B = $(SRCS_B:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
 	ar cr $@ $^
 
-bonus : $(SRCS_B)
-	ar -cr $(NAME) $^
 %.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $^ -I $(LIB)
+
+bonus : $(NAME)
+	$(CC) $(CFLAGS) -c $(SRCS_B) -I $(LIB)
+	ar rc $^ $(OBJS_B)
 
 clean :
 	rm -rf *.o
@@ -33,4 +36,4 @@ fclean : clean
 re : fclean all
 
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus
