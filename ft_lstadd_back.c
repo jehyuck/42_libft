@@ -9,7 +9,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)
         *lst = new;
         return ;
     }
-    else if (lst == NULL || new == NULL)
+    else if (lst == NULL ||  new == NULL)
         return ;
     temp = *lst;
     while ((*lst)->next != NULL)
